@@ -1,0 +1,7 @@
+.jquery-select-to-buttons button {
+    outline: none;
+}
+.jquery-select-to-buttons .selected {
+    font-weight: bold;
+    text-decoration: underline;
+}
