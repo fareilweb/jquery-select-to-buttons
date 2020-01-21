@@ -20,7 +20,7 @@
      * ---------------------------------------------------------------- */
 
     $this.selectCurrent = function (button, option) {
-      var  index = button.dataset.index
+      var index = button.dataset.index;
       $this.setValueToSelect(option);
       $this.highlightSelectedBtn(index);
     };
@@ -64,6 +64,13 @@
       $this.highlightSelectedBtn(current_selected_index);
     }
 
+    // Update value if is changed from other source
+    this.on("change", function(e) {
+      current_value = $this.val();
+      current_selected_index = $this[0].selectedIndex;
+      $this.highlightSelectedBtn(current_selected_index);
+    });
+
     // Create a container for our buttons
     $this.container = document.createElement("div");
     $this.container.id = settings.containerId;
@@ -80,7 +87,6 @@
         optionValue: $option.val()
       });
     });
-
 
     // Create and append buttons
     this.options.forEach(function(option, index) {
