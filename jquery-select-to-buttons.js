@@ -106,7 +106,6 @@
       if(!!current_value && !!current_selected_index && option.index == current_selected_index) {
         var button_class = button.getAttribute("class");
         button.setAttribute("class", button_class + ' selected')
-        console.log(button_class);
       }
 
       button.onclick = function(e) {
