@@ -2,6 +2,11 @@
 
   $.fn.selectToButtons = function (user_settings) {
     var $this = this;
+
+    if($this.length == 0) {
+      return $this;
+    }
+
     var current_value = this.val();
     var current_selected_index = this[0].selectedIndex;
 
